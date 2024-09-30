@@ -36,9 +36,9 @@ export class ConfigbeeWebProvider implements Provider {
     this._client = new Configbee.Client(clientParams)
   }
 
-  private static getCbContext(context:EvaluationContext){
-    if(Object.keys(context).length === 0){
-      return {}
+  private static getCbContext(context:EvaluationContext|undefined){
+    if(!context || Object.keys(context).length === 0){
+      return null
     }
     const cbContext:{[key: string]:string} = {}
     for(let k in context){
@@ -80,11 +80,9 @@ export class ConfigbeeWebProvider implements Provider {
   }
 
   async initialize(context?: EvaluationContext): Promise<void> {
-    if(context != undefined){
-      this._client.setTargetProperties(
-        ConfigbeeWebProvider.getCbContext(context)
-      )
-    }
+    this._client.setTargetProperties(
+      ConfigbeeWebProvider.getCbContext(context)
+    )
     this._client.init()
     try {
       await this._client.waitToLoad()
@@ -100,16 +98,12 @@ export class ConfigbeeWebProvider implements Provider {
   */
 
   async onContextChange(oldContext: EvaluationContext, newContext: EvaluationContext): Promise<void> {
-    if(newContext==undefined){
-      this._client.unsetTargetProperties()
-      await this._client.waitToLoad()
-    }
-    else{
-      this._client.setTargetProperties(
-        ConfigbeeWebProvider.getCbContext(newContext)
-      )
-      await this._client.waitToLoadTargeting()
-    }
+    const cbContext = ConfigbeeWebProvider.getCbContext(newContext)
+    this._client.setTargetProperties(
+      cbContext
+    )
+    await this._client.waitToLoad()
+    await this._client.waitToLoadTargeting()
   }
 
   private getResolutionDetailsFromCbValue<T>(v:T|null|undefined,defaultValue:T):ResolutionDetails<T>{
