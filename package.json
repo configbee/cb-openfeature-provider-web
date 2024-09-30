@@ -1,16 +1,13 @@
 {
   "name": "configbee-openfeature-provider-web",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.3",
   "description": "",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "publish-if-not-exists": "cp $NPM_CONFIG_USERCONFIG .npmrc && if [ \"$(npm show $npm_package_name@$npm_package_version version)\" = \"$(npm run current-version -s)\" ]; then echo 'already published, skipping'; else npm publish --access public; fi",
     "current-version": "echo $npm_package_version",
-    "build-and-publish-alpha": "nx release version && nx package && nx release publish --tag alpha"
+    "build-and-publish-alpha": "nx release --skip-publish && nx package && nx release --tag alpha"
   },
   "repository": {
     "type": "git",
