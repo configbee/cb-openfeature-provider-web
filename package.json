@@ -20,8 +20,7 @@
   },
   "homepage": "https://github.com/configbee/cb-openfeature-provider-web#readme",
   "peerDependencies": {
-    "@openfeature/web-sdk": "^1.0.0",
-    "configbee-client-core": "^0.0.2-alpha.1"
+    "@openfeature/web-sdk": "^1.0.0"
   },
   "devDependencies": {
     "@nx/devkit": "^19.8.0",
@@ -46,5 +45,7 @@
     "tslib": "^2.3.0"
   },
   "nx": {},
-  "dependencies": {}
+  "dependencies": {
+    "configbee-client-core": "^0.0.2-alpha.1"
+  }
 }

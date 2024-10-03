@@ -42,7 +42,7 @@ const configBeeProvider = new ConfigbeeWebProvider({
 // Set the ConfigBee provider for OpenFeature
 OpenFeature.setProvider(configBeeProvider);
 
-// Set context for contextual targeting
+// Optionally set context for contextual targeting
 await OpenFeature.setContext({ key: 'my-key' });
 
 // Example: Fetching a feature flag based on the context
@@ -59,14 +59,43 @@ await OpenFeature.setContext({ userId: 'your-user-id' });
 ```
 The context can include various properties (e.g., user identifiers) to ensure targeted delivery of features and configurations based on the current application state.
 
+## Framework Support
+The **ConfigBee OpenFeature Provider (Web)** is compatible with any framework based on the **OpenFeature Web SDK**, including 
+**React** and **Angular**. As OpenFeature continues to expand, additional frameworks will be supported in the future.
 
-## Building
+For more information:
+- React SDK: [OpenFeature React SDK Documentation](https://openfeature.dev/docs/reference/technologies/client/web/react)
+- Angular SDK: [OpenFeature Angular SDK Documentation](https://openfeature.dev/docs/reference/technologies/client/web/angular)
+- All Available SDKs in Ecosystem: [OpenFeature Ecosystem - JS Client SDKs](https://openfeature.dev/ecosystem?instant_search%5BrefinementList%5D%5Btype%5D%5B0%5D=SDK&instant_search%5BrefinementList%5D%5Bcategory%5D%5B0%5D=Client&instant_search%5BrefinementList%5D%5Btechnology%5D%5B0%5D=JavaScript)
 
-Run `nx package` to build the library.
+## Contributing
+We welcome contributions to the **ConfigBee OpenFeature Provider (Web)!** Whether you're fixing bugs, adding new features, improving documentation, or enhancing test coverage, your input is valuable.
 
-## Running unit tests
+### How to Contribute
+1. **Fork the repository:** Start by forking the ConfigBee OpenFeature Provider (Web) repository to your GitHub account.
+2. **(Optional) Create a branch:** You can create a new branch for your feature or bug fix, though it's not mandatory.
+3. **Make your changes:** Develop and test your changes locally.
+4. **Run tests:** Ensure that all existing and new tests pass before submitting.
+5. **Submit a pull request:** Once your changes are ready and tested, submit a pull request to the main repository.
 
-Run `nx test` to execute the unit tests via [Jest](https://jestjs.io).
+### Building
+To build the project locally, run:
+```bash
+nx package
+```
+This will generate the distributable package for the library.
+
+### Running unit tests
+Unit tests ensure that your changes don't break existing functionality. To execute the tests, run:
+```bash
+nx test
+```
+We use [Jest](https://jestjs.io) for testing. Make sure your new code is covered by unit tests and that all tests pass before submitting your pull request.
+
+### Guidelines
+- Ensure that your code adheres to the repository's coding style and guidelines.
+- Write clear and concise commit messages.
+- Provide detailed information in your pull request description, including what changes were made and why.
 
 ## Resources
 - [NOTICE](https://github.com/configbee/cb-openfeature-provider-web/blob/main/NOTICE)
