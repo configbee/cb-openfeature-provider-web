@@ -58,6 +58,7 @@
         "buildableProjectDepsInPackageJsonType": "dependencies",
         "updateBuildableProjectDepsInPackageJson": true,
         "compiler": "tsc",
+        "sourceMap": true,
         "generateExportsField": true,
         "umdName": "configbee-openfeature-provider-web",
         "external": "all",
