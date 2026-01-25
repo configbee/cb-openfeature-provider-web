@@ -2,6 +2,8 @@
 
 The **ConfigBee OpenFeature Provider (Web)** enables you to use [ConfigBee](https://configbee.com/) as the backend for managing feature flags in a web environment, utilizing the [OpenFeature](https://openfeature.dev/) specification. This provider integrates seamlessly with your application, offering dynamic configuration and feature flagging capabilities with the flexibility of ConfigBee.
 
+[Website](https://configbee.com) | [Documentation](https://docs.configbee.com) | [ConfigBee Openfeature Web Provider Docs](https://docs.configbee.com/openfeature-providers/web/)
+
 ## Features
 - **Real-time feature flagging** using ConfigBee's backend.
 - **Dynamic configuration** capabilities for contextual and targeted feature delivery.
@@ -22,6 +24,9 @@ yarn add configbee-openfeature-provider-web
 ```
 
 ## Getting Started
+
+> 💡 **For the most up-to-date documentation, visit [docs.configbee.com/openfeature-providers/web/](https://docs.configbee.com/openfeature-providers/web/)**
+
 ### Prerequisites
 - You need a ConfigBee account. [Sign up here](https://platform.configbee.com/).
 - You need **OpenFeature Web SDK** installed in your project. If you haven't already set it up, follow the [offical documention here](https://openfeature.dev/docs/reference/technologies/client/web)
