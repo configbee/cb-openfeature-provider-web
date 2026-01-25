@@ -15,5 +15,6 @@
         "packageRoot": "dist"
       }
     }
-  }
+  },
+  "useLegacyCache": true
 }
