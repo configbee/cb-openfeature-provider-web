@@ -46,6 +46,6 @@
   },
   "nx": {},
   "dependencies": {
-    "configbee-client-core": "^0.0.2"
+    "configbee-client-core": "^0.0.3"
   }
 }
