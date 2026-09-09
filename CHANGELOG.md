@@ -1,3 +1,8 @@
+## 0.0.2
+
+Updated project dependencies.
+Bumped the provider version.
+
 ## 0.0.0-alpha.6 (2024-10-03)
 
 This was a version bump only, there were no code changes.
