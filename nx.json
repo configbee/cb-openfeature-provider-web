@@ -7,7 +7,8 @@
       "preserveLocalDependencyProtocols": false,
       "manifestRootsToUpdate": [
         "dist"
-      ]
+      ],
+      "fallbackCurrentVersionResolver": "disk"
     }
   },
   "targetDefaults": {

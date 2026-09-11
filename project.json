@@ -83,6 +83,17 @@
             "output": "./"
           }
         ]
+      },
+      "dependsOn": [
+        {
+          "target": "generate-version"
+        }
+      ]
+    },
+    "generate-version": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "generate-version"
       }
     }
   }
