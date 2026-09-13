@@ -24,13 +24,13 @@
     "@openfeature/web-sdk": "^1.7.2"
   },
   "devDependencies": {
-    "@nx/devkit": "23.2.0",
-    "@nx/eslint-plugin": "^23.2.0",
-    "@nx/jest": "^23.2.0",
-    "@nx/js": "23.2.0",
-    "@nx/plugin": "^23.2.0",
-    "@nx/rollup": "^23.2.0",
-    "@nx/web": "^23.2.0",
+    "@nx/devkit": "23.2.1",
+    "@nx/eslint-plugin": "23.2.1",
+    "@nx/jest": "23.2.1",
+    "@nx/js": "23.2.1",
+    "@nx/plugin": "23.2.1",
+    "@nx/rollup": "23.2.1",
+    "@nx/web": "23.2.1",
     "@swc-node/register": "1.12.1",
     "@swc/core": "1.16.2",
     "@swc/helpers": "0.5.23",
@@ -41,9 +41,14 @@
     "jest": "^30.5.1",
     "jest-environment-jsdom": "^30.5.1",
     "jest-util": "^30.5.1",
-    "nx": "23.2.0",
+    "nx": "23.2.1",
+    "rollup": "^4.63.2",
     "ts-jest": "^29.4.12",
     "tslib": "^2.3.0"
+  },
+  "//": "overrides/smol-toml is to fix npm audit untill nx it self patched",
+  "overrides": {
+    "smol-toml": "^1.7.1"
   },
   "nx": {},
   "dependencies": {

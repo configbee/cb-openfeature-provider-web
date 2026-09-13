@@ -7,15 +7,15 @@
   "targets": {
     "publish": {
       "executor": "nx:run-commands",
-      "options": {
-        "command": "npm run publish-if-not-exists",
-        "cwd": "dist"
-      },
       "dependsOn": [
         {
           "target": "package"
         }
-      ]
+      ],
+      "options": {
+        "command": "npm run publish-if-not-exists",
+        "cwd": "dist"
+      }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -30,60 +30,17 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": [
-        "{projectRoot}/coverage"
-      ],
       "options": {
-        "jestConfig": "jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
         "ci": {
           "ci": true,
-          "codeCoverage": true
+          "coverage": true
         }
       }
     },
     "package": {
-      "executor": "@nx/rollup:rollup",
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "options": {
-        "project": "package.json",
-        "outputPath": "dist",
-        "entryFile": "src/index.ts",
-        "tsConfig": "tsconfig.lib.json",
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "updateBuildableProjectDepsInPackageJson": true,
-        "compiler": "tsc",
-        "sourceMap": true,
-        "generateExportsField": true,
-        "umdName": "configbee-openfeature-provider-web",
-        "external": "all",
-        "format": [
-          "cjs",
-          "esm"
-        ],
-        "assets": [
-          {
-            "glob": "package.json",
-            "input": "./assets",
-            "output": "./src/"
-          },
-          {
-            "glob": "LICENSE",
-            "input": "./",
-            "output": "./"
-          },
-          {
-            "glob": "README.md",
-            "input": "./",
-            "output": "./"
-          }
-        ]
-      },
       "dependsOn": [
         {
           "target": "generate-version"
