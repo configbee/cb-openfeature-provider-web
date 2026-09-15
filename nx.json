@@ -7,7 +7,8 @@
       "preserveLocalDependencyProtocols": false,
       "manifestRootsToUpdate": [
         "dist"
-      ]
+      ],
+      "fallbackCurrentVersionResolver": "disk"
     }
   },
   "targetDefaults": {
@@ -16,5 +17,20 @@
         "packageRoot": "dist"
       }
     }
-  }
+  },
+  "analytics": false,
+  "plugins": [
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
+    {
+      "plugin": "@nx/rollup/plugin",
+      "options": {
+        "buildTargetName": "package"
+      }
+    }
+  ]
 }

@@ -1,13 +1,14 @@
 {
   "name": "configbee-openfeature-provider-web",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.2",
   "description": "",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
   "scripts": {
     "publish-if-not-exists": "cp $NPM_CONFIG_USERCONFIG .npmrc && if [ \"$(npm show $npm_package_name@$npm_package_version version)\" = \"$(npm run current-version -s)\" ]; then echo 'already published, skipping'; else npm publish --access public; fi",
     "current-version": "echo $npm_package_version",
-    "build-and-publish-alpha": "nx release --skip-publish && nx package && nx release publish --tag alpha"
+    "build-and-publish-alpha": "nx release --skip-publish && nx package && nx release publish --tag alpha",
+    "generate-version": "node scripts/generate-version.js"
   },
   "repository": {
     "type": "git",
@@ -23,29 +24,34 @@
     "@openfeature/web-sdk": "^1.7.2"
   },
   "devDependencies": {
-    "@nx/devkit": "22.4.1",
-    "@nx/eslint-plugin": "22.4.1",
-    "@nx/jest": "22.4.1",
-    "@nx/js": "22.4.1",
-    "@nx/plugin": "22.4.1",
-    "@nx/rollup": "22.4.1",
-    "@nx/web": "22.4.1",
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
+    "@nx/devkit": "23.2.1",
+    "@nx/eslint-plugin": "23.2.1",
+    "@nx/jest": "23.2.1",
+    "@nx/js": "23.2.1",
+    "@nx/plugin": "23.2.1",
+    "@nx/rollup": "23.2.1",
+    "@nx/web": "23.2.1",
+    "@swc-node/register": "1.12.1",
+    "@swc/core": "1.16.2",
+    "@swc/helpers": "0.5.23",
     "@types/jest": "30.0.0",
     "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
-    "jest": "30.0.5",
-    "jest-environment-jsdom": "30.0.5",
-    "jest-util": "30.0.5",
-    "nx": "22.4.1",
-    "ts-jest": "29.4.6",
+    "jest": "^30.5.1",
+    "jest-environment-jsdom": "^30.5.1",
+    "jest-util": "^30.5.1",
+    "nx": "23.2.1",
+    "rollup": "^4.63.2",
+    "ts-jest": "^29.4.12",
     "tslib": "^2.3.0"
+  },
+  "//": "overrides/smol-toml is to fix npm audit untill nx it self patched",
+  "overrides": {
+    "smol-toml": "^1.7.1"
   },
   "nx": {},
   "dependencies": {
-    "configbee-client-core": "^0.0.2"
+    "configbee-client-core": "^0.0.3"
   }
 }

@@ -1,6 +1,7 @@
 import { EvaluationContext, Provider, JsonValue, ResolutionDetails, ProviderStatus, OpenFeatureEventEmitter, ProviderEvents, GeneralError, InvalidContextError, ResolutionReason } from '@openfeature/web-sdk';
 
 import Configbee from "configbee-client-core"
+import { SDK_VERSION } from "../version"
 
 export class ConfigbeeWebProvider implements Provider {
   metadata = {
@@ -31,7 +32,9 @@ export class ConfigbeeWebProvider implements Provider {
     this.status = ProviderStatus.NOT_READY;
     const clientParams:Configbee.ClientParams = {...this.params,
       onReady: ()=>{this.handleUpdatesFromCb()},
-      onUpdate: ()=>{this.handleUpdatesFromCb()}
+      onUpdate: ()=>{this.handleUpdatesFromCb()},
+      subSdkName: "cb-openfeature-provider-web",
+      subSdkVersion: SDK_VERSION
     }
     this._client = new Configbee.Client(clientParams)
   }
